@@ -1,288 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Conecta Español — aulas particulares de espanhol</title>
-<meta name="description" content="Aulas individuais e ao vivo de espanhol, online, sob medida para o seu nível e objetivo. Primeira aula experimental gratuita.">
+<meta name="description" content="Aulas individuais e ao vivo de espanhol, desenhadas para o seu nível e seu objetivo. Reserve sua primeira aula experimental gratuita.">
+<meta name="theme-color" content="#08070a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#0A0C11;color:#ECEEF3;font-family:'DM Sans',sans-serif;text-wrap:pretty}
-a{color:#C8FF4D}
-::selection{background:#C8FF4D;color:#0A0C11}
-input:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #C8FF4D;outline-offset:3px}
-h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0}
-.wrap{max-width:1200px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px)}
-.eyebrow{color:#C8FF4D;font-family:'Space Grotesk';font-size:14px;letter-spacing:.12em;text-transform:uppercase}
-h2.t{font-weight:700;font-size:clamp(34px,5vw,62px);line-height:1.03;letter-spacing:-.035em;margin-top:16px;max-width:20ch}
-.muted{color:#9AA1B2}
-.btn{display:inline-block;background:#C8FF4D;color:#0A0C11;text-decoration:none;font-weight:700;padding:17px 28px;border-radius:12px;font-size:17px;border:0;cursor:pointer;font-family:inherit}
-.btn:hover{background:#fff}
-nav{position:sticky;top:0;z-index:20;background:#0A0C11cc;backdrop-filter:blur(14px);border-bottom:1px solid #1E232E}
-nav .wrap{display:flex;align-items:center;gap:28px;padding-top:14px;padding-bottom:14px}
-.logo{font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-.02em;margin-right:auto}
-.logo b{color:#C8FF4D}
-nav a.l{color:#9AA1B2;text-decoration:none;font-size:15px}
-nav a.l:hover{color:#fff}
-nav a.cta{background:#C8FF4D;color:#0A0C11;text-decoration:none;font-weight:700;font-size:15px;padding:10px 18px;border-radius:10px}
-.hero{position:relative;overflow:hidden}
-.hero .grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 70% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 80% 70% at 70% 40%,#000 30%,transparent 80%)}
-.hero .glow{position:absolute;width:560px;height:560px;right:-120px;top:-60px;border-radius:50%;background:radial-gradient(circle,#C8FF4D33,transparent 65%);animation:glow 6s ease-in-out infinite}
-.hero .in{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:56px;align-items:center;padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(72px,9vw,128px)}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid #2A3040;color:#9AA1B2;font-size:14px;padding:7px 14px;border-radius:999px}
-.pill i{width:8px;height:8px;border-radius:50%;background:#C8FF4D}
-h1{font-weight:700;font-size:clamp(44px,6.4vw,86px);line-height:1;letter-spacing:-.04em;margin:26px 0 0}
-h1 span,h2 span{color:#C8FF4D}
-.chat{position:relative;background:#12151D;border:1px solid #2A3040;border-radius:24px;padding:24px;display:grid;gap:14px;box-shadow:0 40px 80px #000a;max-width:420px;margin:0 auto}
-.chat .hd{display:flex;align-items:center;gap:12px;font-weight:700}
-.chat .av{width:38px;height:38px;border-radius:10px;background:#C8FF4D;color:#0A0C11;display:grid;place-items:center;font-family:'Space Grotesk';font-size:18px}
-.chat small{font-weight:400;font-size:13px;color:#C8FF4D}
-.b{padding:12px 16px;max-width:88%}
-.b.l{background:#1D2230;border-radius:14px 14px 14px 4px;justify-self:start}
-.b.r{background:#C8FF4D;color:#0A0C11;font-weight:700;border-radius:14px 14px 4px 14px;justify-self:end}
-.chat .b{animation:pop .6s both}
-.chat .b:nth-child(2){animation-delay:.3s}.chat .b:nth-child(3){animation-delay:1.3s}.chat .b:nth-child(4){animation-delay:2.3s}
-.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
-.tags span{background:#12151D;border:1px solid #2A3040;font-family:'Space Grotesk';font-weight:500;font-size:15px;padding:8px 14px;border-radius:10px;animation:float 5s ease-in-out infinite}
-.tags span:nth-child(2){animation-delay:1s}.tags span:nth-child(3){animation-delay:2s}.tags span:nth-child(4){animation-delay:.5s}
-.marq{border-top:1px solid #1E232E;border-bottom:1px solid #1E232E;overflow:hidden;white-space:nowrap}
-.marq div{display:inline-flex;width:max-content;animation:marq 34s linear infinite;font-family:'Space Grotesk';font-weight:500;font-size:20px;padding:18px 0;color:#6E7587}
-.marq span{padding:0 30px}.marq b{color:#C8FF4D}
-section.s{padding-top:clamp(64px,9vw,120px);padding-bottom:24px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1px;margin-top:52px;background:#1E232E;border:1px solid #1E232E;border-radius:20px;overflow:hidden}
-.stats div{background:#0F1218;padding:32px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
-.stats b{font-family:'Space Grotesk';font-size:64px;line-height:1;letter-spacing:-.04em}
-.stats b.g{color:#C8FF4D}
-.stats p{margin:0;color:#9AA1B2;line-height:1.5}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-top:52px}
-.card{background:#0F1218;border:1px solid #1E232E;border-radius:20px;padding:28px}
-.card:hover{border-color:#C8FF4D}
-.card .n{font-family:'Space Grotesk';color:#C8FF4D;font-size:15px}
-.card h3{font-weight:500;font-size:24px;letter-spacing:-.02em;margin:40px 0 10px}
-.card p{margin:0;color:#9AA1B2;line-height:1.6}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:56px;align-items:center}
-.who{display:grid;gap:26px;align-content:center}
-.who div{padding-left:20px;border-left:2px solid #2A3040}
-.who div:first-child{border-color:#C8FF4D}
-.who b{font-family:'Space Grotesk';font-size:20px}
-.who p{margin:6px 0 0;line-height:1.6;color:#9AA1B2}
-.art{aspect-ratio:5/4;border-radius:24px;overflow:hidden;background:#0F1218;border:1px solid #1E232E}
-.art svg{width:100%;height:100%;display:block}
-.steps{display:grid;gap:18px;margin-top:30px}
-.steps p{margin:0;display:flex;gap:18px;align-items:baseline}
-.steps i{font-family:'Space Grotesk';color:#C8FF4D;font-style:normal;font-weight:700}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-top:52px}
-.plan{background:#0F1218;border:1px solid #1E232E;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:10px}
-.plan.hot{background:#12151D;border-color:#C8FF4D;box-shadow:0 0 60px #C8FF4D1f}
-.plan .tag{color:#0A0C11;background:#C8FF4D;align-self:flex-start;padding:3px 12px;border-radius:999px;font-size:13px;font-weight:700}
-.plan .k{color:#9AA1B2;font-weight:500}
-.plan h3{font-weight:500;font-size:24px}
-.plan .p{margin:0 0 18px;line-height:1.55;flex:1;color:#9AA1B2}
-.plan a{text-align:center;text-decoration:none;font-weight:700;padding:14px;border-radius:12px;border:1px solid #2A3040;color:#ECEEF3}
-.plan a:hover{border-color:#C8FF4D;color:#C8FF4D}
-.plan.hot a{background:#C8FF4D;color:#0A0C11;border-color:#C8FF4D}
-.plan.hot a:hover{background:#fff}
-.note{font-size:15px;color:#6E7587;margin-top:20px}
-details{background:#0F1218;border:1px solid #1E232E;border-radius:16px;padding:20px 24px;margin-top:12px}
-summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:19px}
-details p{margin:12px 0 0;color:#9AA1B2;line-height:1.6}
-.faq{max-width:820px}
-#aula{position:relative;overflow:hidden;margin-top:clamp(64px,9vw,120px)}
-#aula .glow{position:absolute;width:640px;height:640px;left:-200px;bottom:-320px;border-radius:50%;background:radial-gradient(circle,#C8FF4D26,transparent 65%)}
-#aula .in{position:relative;padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(56px,8vw,112px)}
-.form{background:#12151D;border:1px solid #2A3040;border-radius:24px;padding:clamp(24px,4vw,40px);display:grid;gap:18px}
-.form label,.form .lb{display:grid;gap:8px;font-weight:500;font-size:15px}
-.form input[type=text]{font:inherit;padding:14px 16px;border-radius:12px;border:1px solid #2A3040;background:#0A0C11;color:#ECEEF3}
-.lv{display:flex;gap:8px;flex-wrap:wrap}
-.lv button{font:inherit;font-weight:500;font-size:15px;cursor:pointer;padding:10px 18px;border-radius:10px;border:1px solid #2A3040;background:transparent;color:#ECEEF3}
-.lv button.on{background:#C8FF4D;color:#0A0C11;border-color:#C8FF4D}
-footer{border-top:1px solid #1E232E;color:#6E7587;font-size:14px}
-footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#25D366;color:#06210f;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 10px 30px #0008}
-.wa:hover{background:#fff;color:#06210f}
-@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes marq{to{transform:translateX(-50%)}}
-@keyframes glow{0%,100%{opacity:.55}50%{opacity:.9}}
-@media(max-width:640px){nav a.l{display:none}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+:root{
+  --bg:#08070a; --bg2:#0d0b0f; --ink:#efe8dc; --mute:#9b9285; --line:rgba(239,232,220,.12);
+  --gold:#e3cfa6; --gold-d:#b8a073; --glass:rgba(239,232,220,.06);
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font:400 11px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05}
+h2{font-size:clamp(36px,5.5vw,64px);letter-spacing:-.01em}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+section{position:relative;padding:130px 0}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1.1s ease,transform 1.1s ease}
+.rv.in{opacity:1;transform:none}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px 32px;transition:background .5s,backdrop-filter .5s}
+nav.s{background:rgba(8,7,10,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font:italic 400 24px var(--serif);letter-spacing:.01em}
+.logo b{font-weight:400;font-style:normal;color:var(--gold)}
+nav ul{display:flex;gap:34px;list-style:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+nav ul a:hover{color:var(--ink)}
+.glass{display:inline-flex;align-items:center;gap:12px;padding:16px 34px;border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid rgba(227,207,166,.4);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 40px rgba(227,207,166,.12);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:box-shadow .5s,border-color .5s,transform .5s}
+.glass:hover{border-color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 10px 70px rgba(227,207,166,.35);transform:translateY(-2px)}
+.glass.sm{padding:11px 22px;font-size:11px}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 0 90px;overflow:hidden}
+.ribbons{position:absolute;inset:0;z-index:0;opacity:.9}
+.ribbons svg{width:100%;height:100%}
+.rb{fill:none;stroke-linecap:round;mix-blend-mode:screen;transform-origin:center;animation:drift 22s ease-in-out infinite alternate}
+.rb:nth-child(2){animation-duration:30s;animation-delay:-8s}
+.rb:nth-child(3){animation-duration:26s;animation-delay:-14s}
+.rb:nth-child(4){animation-duration:36s;animation-delay:-4s}
+@keyframes drift{from{transform:translate3d(-4%,2%,0) rotate(-2deg) scaleY(1)}to{transform:translate3d(4%,-3%,0) rotate(2deg) scaleY(1.25)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(8,7,10,.78),transparent 75%),linear-gradient(transparent 70%,var(--bg))}
+.card{position:relative;z-index:2;max-width:900px;padding:0 24px}
+.card .eyebrow{display:block;margin-bottom:30px;animation:up 1.6s .2s both}
+.card h1{font-size:clamp(52px,10vw,132px);letter-spacing:-.02em;animation:up 1.8s .5s both}
+.card p{max-width:520px;margin:34px auto 46px;color:var(--mute);font-size:17px;animation:up 1.6s 1s both}
+.card .glass{animation:up 1.6s 1.3s both}
+.card small{display:block;margin-top:26px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);animation:up 1.6s 1.6s both}
+@keyframes up{from{opacity:0;transform:translateY(28px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.scroll{position:absolute;bottom:30px;left:50%;z-index:2;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* manifesto */
+.manifesto{padding:170px 0;text-align:center}
+.manifesto p{font:300 clamp(30px,5vw,60px)/1.25 var(--serif);max-width:960px;margin:0 auto;letter-spacing:-.01em}
+.manifesto p span{opacity:.14;transition:opacity .9s ease,color .9s}
+.manifesto p span.on{opacity:1}
+.manifesto p span.g.on{color:var(--gold);font-style:italic}
+
+/* tabs */
+.tabs-h{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.tablist{display:flex;gap:6px;padding:5px;border:1px solid var(--line);border-radius:99px;background:var(--glass);backdrop-filter:blur(10px)}
+.tablist button{background:none;border:0;padding:11px 22px;border-radius:99px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);cursor:pointer;transition:.4s}
+.tablist button[aria-selected=true]{background:rgba(227,207,166,.14);color:var(--gold);box-shadow:inset 0 0 0 1px rgba(227,207,166,.35)}
+.panel{display:none;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center;animation:fade .9s both}
+.panel.on{display:grid}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.panel h3{font-size:clamp(30px,4vw,46px);margin-bottom:22px}
+.panel p{color:var(--mute);margin-bottom:18px;max-width:480px}
+.stat{display:grid;gap:0}
+.stat div{display:flex;align-items:baseline;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
+.stat div:last-child{border-bottom:1px solid var(--line)}
+.stat b{font:300 56px/1 var(--serif);color:var(--gold);min-width:150px}
+.stat span{color:var(--mute);font-size:14px}
+.opp{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.opp div{background:var(--bg);padding:30px 26px}
+.opp i{font:italic 300 15px var(--serif);color:var(--gold)}
+.opp h4{font:400 24px/1.2 var(--serif);margin:8px 0 10px}
+.opp p{font-size:13px;line-height:1.6;margin:0}
+.fig{position:relative;aspect-ratio:4/5;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:radial-gradient(circle at 50% 35%,rgba(227,207,166,.16),transparent 60%),var(--bg2);display:grid;place-items:center}
+.fig .big{font:italic 300 clamp(120px,18vw,220px)/1 var(--serif);color:var(--gold);text-shadow:0 0 80px rgba(227,207,166,.5)}
+.fig figcaption{position:absolute;bottom:20px;left:22px;right:22px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+.aud{display:grid;gap:0}
+.aud div{padding:26px 0;border-top:1px solid var(--line)}
+.aud div:last-child{border-bottom:1px solid var(--line)}
+.aud h4{font:400 30px var(--serif)}
+.aud p{margin:6px 0 0}
+
+/* night scene */
+.night{padding:0;background:#000}
+.lb{position:relative;aspect-ratio:2.39/1;max-height:82vh;min-height:360px;width:100%;overflow:hidden;border-top:clamp(14px,5vw,64px) solid #000;border-bottom:clamp(14px,5vw,64px) solid #000;box-sizing:content-box}
+.lb svg{position:absolute;inset:0;width:100%;height:100%}
+.star{animation:tw 4s infinite alternate}
+@keyframes tw{from{opacity:.2}to{opacity:1}}
+.lb .meta{position:absolute;top:22px;left:28px;right:28px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(239,232,220,.55)}
+.sub{position:absolute;bottom:7%;left:0;right:0;text-align:center;font:italic 300 clamp(20px,3.2vw,38px) var(--serif);text-shadow:0 2px 20px #000;transition:opacity .8s}
+.sub small{display:block;font:300 13px var(--sans);letter-spacing:.14em;color:var(--gold);margin-top:6px;font-style:normal}
+
+/* specs */
+.specs-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.specs-g h2{margin:18px 0 26px}
+.lead{color:var(--mute);max-width:460px}
+.steps{margin-top:44px;display:grid;gap:26px}
+.steps div{display:grid;grid-template-columns:54px 1fr;gap:6px}
+.steps i{font:italic 300 30px var(--serif);color:var(--gold);grid-row:span 2}
+.steps b{font:400 22px var(--serif)}
+.steps span{color:var(--mute);font-size:14px}
+table{width:100%;border-collapse:collapse}
+td{padding:19px 0;border-top:1px solid var(--line);vertical-align:top;font-size:14px}
+tr:last-child td{border-bottom:1px solid var(--line)}
+td:first-child{width:38%;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);padding-top:22px}
+td b{font:400 22px var(--serif);display:block;line-height:1.2}
+td em{font-style:normal;color:var(--mute);font-size:13px}
+.plan-n{margin-top:18px;font-size:12px;color:var(--mute)}
+.tag{display:inline-block;margin-left:10px;padding:2px 10px;border:1px solid rgba(227,207,166,.45);border-radius:99px;font:400 9px/1.6 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);vertical-align:middle}
+
+/* whatsapp panel */
+.app{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.app-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.phone{width:min(320px,100%);margin:0 auto;border-radius:44px;padding:12px;background:linear-gradient(160deg,#2a2620,#0c0a0d);box-shadow:0 0 0 1px rgba(227,207,166,.25),0 50px 120px rgba(227,207,166,.12)}
+.screen{border-radius:34px;background:#0a090c;padding:20px 16px 22px;min-height:470px;display:flex;flex-direction:column;gap:10px}
+.top{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.top .av{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold),var(--gold-d));display:grid;place-items:center;font:italic 18px var(--serif);color:#1a1409}
+.top b{font-weight:400;font-size:13px;display:block;line-height:1.3}
+.top small{font-size:10px;color:var(--gold);letter-spacing:.1em}
+.m{max-width:82%;padding:10px 14px;border-radius:16px;font-size:13px;line-height:1.5;opacity:0;animation:pop .7s forwards}
+.m.l{background:var(--glass);border:1px solid var(--line);border-bottom-left-radius:4px}
+.m.r{align-self:flex-end;background:rgba(227,207,166,.16);border:1px solid rgba(227,207,166,.3);border-bottom-right-radius:4px}
+.screen.go .m:nth-of-type(2){animation-delay:.3s}.screen.go .m:nth-of-type(3){animation-delay:1.5s}.screen.go .m:nth-of-type(4){animation-delay:2.7s}.screen.go .m:nth-of-type(5){animation-delay:3.9s}
+.screen:not(.go) .m{animation:none}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+.app h2{margin:18px 0 24px}
+.feat{list-style:none;margin-top:34px;display:grid;gap:14px}
+.feat li{display:flex;gap:14px;color:var(--mute);font-size:14px}
+.feat li::before{content:"";flex:none;width:6px;height:6px;margin-top:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+
+/* showroom */
+.sr-g{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.sr h2{margin:18px 0 24px}
+.book{border:1px solid var(--line);border-radius:6px;padding:38px;background:linear-gradient(180deg,var(--glass),transparent)}
+.book label,.fm label{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute);margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.chip{padding:11px 20px;border:1px solid var(--line);border-radius:99px;background:none;cursor:pointer;font-size:13px;color:var(--mute);transition:.35s}
+.chip:hover{border-color:rgba(227,207,166,.5);color:var(--ink)}
+.chip[aria-pressed=true]{border-color:var(--gold);background:rgba(227,207,166,.13);color:var(--gold)}
+.sel{font:italic 300 24px/1.3 var(--serif);padding-top:24px;border-top:1px solid var(--line);margin-bottom:26px;min-height:80px}
+.sel em{color:var(--gold)}
+
+/* journal */
+.jr-h{margin-bottom:50px}
+.jr-h h2{margin-top:18px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:70px 1fr 30px;align-items:baseline;padding:30px 0;font:300 clamp(24px,3.2vw,36px)/1.2 var(--serif);transition:color .4s}
+summary::-webkit-details-marker{display:none}
+summary i{font-size:14px;color:var(--gold);font-family:var(--sans);font-style:normal;letter-spacing:.2em}
+summary::after{content:"+";color:var(--gold);font:300 28px var(--sans);transition:transform .4s}
+details[open] summary::after{transform:rotate(45deg)}
+summary:hover{color:var(--gold)}
+details p{padding:0 30px 34px 70px;color:var(--mute);max-width:720px}
+
+/* closing */
+.close{text-align:center;overflow:hidden;padding:160px 0 130px}
+.close::before{content:"";position:absolute;left:50%;top:48%;width:min(1100px,150vw);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(227,207,166,.28),rgba(227,207,166,.08) 35%,transparent 65%);animation:glow 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes glow{from{opacity:.55;transform:translate(-50%,-50%) scale(.9)}to{opacity:1;transform:translate(-50%,-50%) scale(1.05)}}
+.close .wrap{position:relative}
+.close h2{font-size:clamp(46px,8vw,104px);margin:24px 0 24px}
+.close .lead{margin:0 auto 54px;max-width:480px}
+.fm{max-width:520px;margin:0 auto;text-align:left;padding:40px;border:1px solid rgba(227,207,166,.28);border-radius:8px;background:rgba(8,7,10,.55);backdrop-filter:blur(18px);box-shadow:0 30px 100px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08)}
+.fm input[type=text]{width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:8px 0 14px;font:300 24px var(--serif);margin-bottom:34px;transition:border-color .4s}
+.fm input[type=text]:focus{outline:0;border-color:var(--gold)}
+.fm input::placeholder{color:rgba(239,232,220,.3)}
+.fm .glass{width:100%;justify-content:center}
+.fm .chips{margin-bottom:30px}
+.fm p.n{margin-top:18px;font-size:12px;color:var(--mute);text-align:center}
+.pref{font-size:13px;color:var(--mute);margin:-14px 0 30px}.pref em{font-style:normal;color:var(--gold)}
+footer{padding:44px 24px 60px;text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);border-top:1px solid var(--line)}
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03));border:1px solid rgba(227,207,166,.5);backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.5),0 0 30px rgba(227,207,166,.2);transition:.4s}
+.wa:hover{box-shadow:0 10px 40px rgba(0,0,0,.5),0 0 50px rgba(227,207,166,.5)}
+.wa svg{width:24px;height:24px;fill:var(--gold)}
+
+@media(max-width:860px){
+  nav{padding:16px 20px}nav ul{display:none}
+  section{padding:90px 0}.manifesto{padding:110px 0}
+  .panel,.specs-g,.app-g,.sr-g{grid-template-columns:1fr;gap:44px}
+  .fig{aspect-ratio:16/10}
+  .tablist button{padding:10px 14px;font-size:10px}
+  .opp{grid-template-columns:1fr}
+  summary{grid-template-columns:44px 1fr 24px}details p{padding-left:44px;padding-right:0}
+  .book,.fm{padding:26px}
+  .lb .meta{display:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}.manifesto p span{opacity:1}}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap">
-  <span class="logo">conecta<b>/</b>español</span>
-  <a class="l" href="#porque">Por que espanhol</a>
-  <a class="l" href="#oportunidades">Oportunidades</a>
-  <a class="l" href="#planos">Planos</a>
-  <a class="cta" href="#aula">Aula grátis</a>
-</div></nav>
+<nav id="nav">
+  <a class="logo" href="#top">Conecta <b>Español</b></a>
+  <ul><li><a href="#porque">Espanhol</a></li><li><a href="#formato">Formato</a></li><li><a href="#reserva">Reserva</a></li><li><a href="#duvidas">Diário</a></li></ul>
+  <a class="glass sm" href="#aula">Aula grátis</a>
+</nav>
 
-<header class="hero">
-  <div class="grid"></div><div class="glow"></div>
-  <div class="wrap in">
-    <div>
-      <span class="pill"><i></i>1ª aula experimental gratuita</span>
-      <h1>Fale espanhol com <span>confiança.</span></h1>
-      <p class="muted" style="font-size:20px;line-height:1.55;max-width:48ch;margin:28px 0 0">Aulas individuais e ao vivo, desenhadas para o seu nível e seu objetivo — do primeiro “hola” à reunião de trabalho.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;align-items:center">
-        <a class="btn" href="#aula">Agendar aula experimental →</a>
-        <a href="#oportunidades" style="color:#ECEEF3;font-size:16px;text-underline-offset:5px">Ver oportunidades</a>
-      </div>
-      <p style="font-size:14px;margin:24px 0 0;color:#6E7587">Sem compromisso · 100% online</p>
-    </div>
-    <div>
-      <div class="chat">
-        <div class="hd"><span class="av">ñ</span><span>Aula ao vivo<br><small>● online agora</small></span></div>
-        <div class="b l">¡Hola! ¿Cómo estás hoy?</div>
-        <div class="b r">¡Muy bien, gracias!</div>
-        <div class="b l">¡Perfecto! Vamos a practicar.</div>
-      </div>
-      <div class="tags"><span>Viajar</span><span>Trabalho</span><span>Cultura</span><span>Intercâmbio</span></div>
-    </div>
-  </div>
-</header>
-
-<div class="marq"><div>
-  <span>Hola <b>/</b></span><span>Gracias <b>/</b></span><span>Buenos días <b>/</b></span><span>Oportunidad <b>/</b></span><span>Conexión <b>/</b></span><span>Futuro <b>/</b></span><span>Fluidez <b>/</b></span>
-  <span>Hola <b>/</b></span><span>Gracias <b>/</b></span><span>Buenos días <b>/</b></span><span>Oportunidad <b>/</b></span><span>Conexión <b>/</b></span><span>Futuro <b>/</b></span><span>Fluidez <b>/</b></span>
-</div></div>
-
-<section id="porque" class="wrap s">
-  <span class="eyebrow">01 — Por que espanhol</span>
-  <h2 class="t" style="max-width:18ch">Um idioma, dezenas de países.</h2>
-  <div class="stats">
-    <div><b class="g">500M+</b><p>de pessoas falam espanhol no mundo.</p></div>
-    <div><b>20+</b><p>países têm o espanhol como idioma oficial.</p></div>
-    <div><b>2º</b><p>idioma nativo mais falado do planeta.</p></div>
-    <div><b>→</b><p>É o idioma dos nossos vizinhos: a América Latina está logo ali.</p></div>
-  </div>
-  <p class="muted" style="font-size:19px;line-height:1.65;max-width:62ch;margin:40px 0 0">Para brasileiros, o espanhol é um dos idiomas mais acessíveis: a proximidade com o português acelera o aprendizado — e o retorno aparece rápido.</p>
-</section>
-
-<section id="oportunidades" class="wrap s">
-  <span class="eyebrow">02 — Oportunidades</span>
-  <h2 class="t">O que o espanhol abre para você.</h2>
-  <div class="cards">
-    <div class="card"><span class="n">01</span><h3>Carreira e salário</h3><p>Bilíngues se destacam em processos seletivos, multinacionais, comércio exterior, turismo e atendimento internacional.</p></div>
-    <div class="card"><span class="n">02</span><h3>Negócios na região</h3><p>Argentina, Chile, México, Colômbia: negocie, venda e construa parcerias sem depender de intérprete.</p></div>
-    <div class="card"><span class="n">03</span><h3>Estudo e intercâmbio</h3><p>Universidades, bolsas e programas na Espanha e na América Latina ficam ao seu alcance.</p></div>
-    <div class="card"><span class="n">04</span><h3>Viagens e cultura</h3><p>Viaje com autonomia e entenda música, cinema e séries no idioma original, sem legenda.</p></div>
-  </div>
-</section>
-
-<section class="wrap s two">
-  <div><span class="eyebrow">03 — Para quem é</span><h2 style="font-weight:700;font-size:clamp(32px,4.4vw,54px);line-height:1.03;letter-spacing:-.035em;margin-top:16px">Você entende, mas trava na hora de falar?</h2></div>
-  <div class="who">
-    <div><b>Iniciantes</b><p>Comece do zero sem medo de errar, com base sólida e pronúncia correta.</p></div>
-    <div><b>Intermediários</b><p>Saia do “entendo, mas não falo” com muita conversação.</p></div>
-    <div><b>Profissionais</b><p>Espanhol para reuniões, e-mails e negociações da sua área.</p></div>
-  </div>
-</section>
-
-<section id="metodo" class="wrap s two">
-  <div class="art">
-    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de uma aula de espanhol por videochamada">
-      <rect width="500" height="400" fill="#0F1218"/>
-      <circle cx="400" cy="70" r="150" fill="#C8FF4D" opacity=".07"/>
-      <rect x="70" y="60" width="360" height="230" rx="16" fill="#12151D" stroke="#2A3040" stroke-width="2"/>
-      <rect x="86" y="76" width="328" height="198" rx="8" fill="#0A0C11"/>
-      <rect x="100" y="92" width="150" height="104" rx="10" fill="#1D2230"/>
-      <circle cx="175" cy="132" r="20" fill="#2A3040"/>
-      <path d="M135 192c0-22 18-34 40-34s40 12 40 34z" fill="#2A3040"/>
-      <rect x="264" y="92" width="136" height="104" rx="10" fill="#1D2230"/>
-      <circle cx="332" cy="132" r="20" fill="#C8FF4D" opacity=".85"/>
-      <path d="M292 192c0-22 18-34 40-34s40 12 40 34z" fill="#C8FF4D" opacity=".85"/>
-      <rect x="100" y="210" width="200" height="30" rx="15" fill="#1D2230"/>
-      <text x="116" y="230" font-family="Space Grotesk,sans-serif" font-size="15" fill="#ECEEF3">¡Hola! ¿Cómo estás?</text>
-      <rect x="250" y="246" width="150" height="22" rx="11" fill="#C8FF4D"/>
-      <text x="264" y="262" font-family="Space Grotesk,sans-serif" font-size="13" font-weight="700" fill="#0A0C11">¡Muy bien, gracias!</text>
-      <path d="M40 300h420l-24 34H64z" fill="#12151D" stroke="#2A3040" stroke-width="2"/>
-      <rect x="215" y="304" width="70" height="6" rx="3" fill="#2A3040"/>
-      <text x="250" y="372" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="22" font-weight="700" fill="#ECEEF3">conecta<tspan fill="#C8FF4D">/</tspan>español</text>
+<!-- I · Title card -->
+<header class="hero" id="top">
+  <div class="ribbons" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e3cfa6" stop-opacity="0"/><stop offset=".5" stop-color="#e3cfa6" stop-opacity=".85"/><stop offset="1" stop-color="#b8a073" stop-opacity="0"/></linearGradient>
+        <linearGradient id="g2" x1="1" x2="0"><stop offset="0" stop-color="#f4e6c6" stop-opacity="0"/><stop offset=".5" stop-color="#d9c08c" stop-opacity=".6"/><stop offset="1" stop-color="#e3cfa6" stop-opacity="0"/></linearGradient>
+        <filter id="b1" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+        <filter id="b2" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+      </defs>
+      <path class="rb" d="M-100 620 C 250 380, 520 820, 860 520 S 1300 300, 1560 460" stroke="url(#g1)" stroke-width="90" filter="url(#b1)"/>
+      <path class="rb" d="M-100 700 C 300 520, 600 900, 900 640 S 1250 420, 1560 560" stroke="url(#g2)" stroke-width="3" filter="url(#b2)"/>
+      <path class="rb" d="M-100 300 C 260 120, 560 520, 880 260 S 1280 80, 1560 220" stroke="url(#g2)" stroke-width="60" filter="url(#b1)" opacity=".7"/>
+      <path class="rb" d="M-100 340 C 300 200, 600 560, 920 320 S 1280 160, 1560 280" stroke="url(#g1)" stroke-width="2" filter="url(#b2)"/>
     </svg>
   </div>
-  <div>
-    <span class="eyebrow">04 — O método</span>
-    <h2 style="font-weight:700;font-size:clamp(32px,4.4vw,54px);line-height:1.03;letter-spacing:-.035em;margin-top:16px">Aula sob medida, não curso de prateleira.</h2>
-    <p class="muted" style="font-size:18px;line-height:1.65;margin:22px 0 0">Mais de 10 anos ensinando em escolas, cursos de idiomas e com experiência internacional: cada aula se adapta ao seu nível, suas dificuldades e seu objetivo.</p>
-    <div class="steps">
-      <p><i>01</i><span><b>Diagnóstico gratuito</b> <span class="muted">do seu nível e da sua meta.</span></span></p>
-      <p><i>02</i><span><b>Plano personalizado</b> <span class="muted">no seu ritmo.</span></span></p>
-      <p><i>03</i><span><b>Prática de verdade</b> <span class="muted">com correção gentil a cada aula.</span></span></p>
-    </div>
+  <div class="card">
+    <span class="eyebrow">Conecta Español · Aulas particulares</span>
+    <h1>Fale espanhol<br>com <em>confiança.</em></h1>
+    <p>Aulas individuais e ao vivo, desenhadas para o seu nível e seu objetivo — do primeiro “hola” à reunião de trabalho.</p>
+    <a class="glass" href="#aula">Reservar aula experimental <span aria-hidden="true">→</span></a>
+    <small>Gratuita · sem compromisso · 100% online</small>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</header>
+
+<!-- II · Manifesto -->
+<section class="manifesto">
+  <div class="wrap">
+    <p id="mf" data-t="Um idioma não se decora. Se vive, em voz alta, desde a primeira aula.">Um idioma não se decora. Se vive, em voz alta, desde a primeira aula.</p>
   </div>
 </section>
 
-<section id="planos" class="wrap s">
-  <span class="eyebrow">05 — Planos</span>
-  <h2 class="t" style="max-width:24ch">O ritmo que cabe na sua rotina.</h2>
-  <div class="plans">
-    <div class="plan"><b class="k">Leve</b><h3>1 aula por semana</h3><p class="p">4 aulas individuais de 50 min por mês. Ideal para manter contato com o idioma.</p><a href="#aula">Consultar valor</a></div>
-    <div class="plan hot"><b class="tag">Mais escolhido</b><h3>2 aulas por semana</h3><p class="p">8 aulas por mês. O ritmo ideal para evoluir de verdade em poucos meses.</p><a href="#aula">Consultar valor</a></div>
-    <div class="plan"><b class="k">Intensivo</b><h3>3 aulas por semana</h3><p class="p">12 aulas por mês para quem tem prazo: viagem, mudança ou vaga de trabalho.</p><a href="#aula">Consultar valor</a></div>
-  </div>
-  <p class="note">Os valores são passados no WhatsApp, junto com o agendamento da aula experimental.</p>
-</section>
-
-<section id="duvidas" class="wrap s faq">
-  <span class="eyebrow">06 — Dúvidas</span>
-  <h2 class="t" style="max-width:24ch">Perguntas frequentes.</h2>
-  <div style="margin-top:36px">
-    <details><summary>Como funciona a aula experimental?</summary><p>É uma conversa online e individual, sem custo e sem compromisso, para entender seu nível e seu objetivo e mostrar como são as aulas.</p></details>
-    <details><summary>Preciso saber alguma coisa de espanhol?</summary><p>Não. Há aulas para quem começa do zero, para quem já entende e quer falar, e para quem precisa do idioma no trabalho.</p></details>
-    <details><summary>As aulas são online?</summary><p>Sim, 100% online e ao vivo, em horários combinados com você.</p></details>
-    <details><summary>Como agendo?</summary><p>Preencha o formulário abaixo: ele abre uma conversa no WhatsApp já com seus dados, e a professora responde para combinar o melhor horário.</p></details>
-  </div>
-</section>
-
-<section id="aula">
-  <div class="glow"></div>
-  <div class="wrap in two">
-    <div>
-      <h2 style="font-weight:700;font-size:clamp(38px,5.6vw,72px);line-height:1;letter-spacing:-.04em">Sua primeira aula é <span>por nossa conta.</span></h2>
-      <p class="muted" style="font-size:19px;line-height:1.6;margin:24px 0 0;max-width:42ch">Deixe seu nome e seu nível: abrimos uma conversa no WhatsApp para combinar o melhor horário. Sem compromisso, sem cartão.</p>
-    </div>
-    <form class="form" id="f">
-      <label>Seu nome<input type="text" id="nome" required placeholder="Como posso te chamar?" autocomplete="given-name"></label>
-      <div class="lb"><span>Seu nível hoje</span>
-        <div class="lv" id="lv">
-          <button type="button" class="on">Iniciante</button>
-          <button type="button">Intermediário</button>
-          <button type="button">Avançado</button>
-        </div>
+<!-- III · Tabbed close-ups -->
+<section id="porque">
+  <div class="wrap">
+    <div class="tabs-h rv">
+      <div><span class="eyebrow">Close-ups</span><h2 style="margin-top:18px">Um idioma,<br><em>dezenas de países.</em></h2></div>
+      <div class="tablist" role="tablist" aria-label="Seções">
+        <button role="tab" id="t1" aria-selected="true" aria-controls="p1">Por que espanhol</button>
+        <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Oportunidades</button>
+        <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Para quem é</button>
       </div>
-      <button class="btn" type="submit">Quero minha aula gratuita →</button>
-      <p class="note" style="margin:0">Ao enviar, você abre o WhatsApp com a mensagem pronta.</p>
+    </div>
+
+    <div class="panel on" id="p1" role="tabpanel" aria-labelledby="t1">
+      <div>
+        <h3>É o idioma dos nossos vizinhos.</h3>
+        <p>A América Latina está logo ali. Para brasileiros, o espanhol é um dos idiomas mais acessíveis: a proximidade com o português acelera o aprendizado — e o retorno aparece rápido.</p>
+      </div>
+      <div class="stat">
+        <div><b>500M+</b><span>de pessoas falam espanhol no mundo.</span></div>
+        <div><b>20+</b><span>países têm o espanhol como idioma oficial.</span></div>
+        <div><b>2º</b><span>idioma nativo mais falado do planeta.</span></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+      <div>
+        <h3>O que o espanhol abre para você.</h3>
+        <p>Quatro portas que se abrem quando você fala o idioma com segurança.</p>
+      </div>
+      <div class="opp">
+        <div><i>01</i><h4>Carreira e salário</h4><p>Bilíngues se destacam em processos seletivos, multinacionais, comércio exterior, turismo e atendimento internacional.</p></div>
+        <div><i>02</i><h4>Negócios na região</h4><p>Argentina, Chile, México, Colômbia: negocie, venda e construa parcerias sem depender de intérprete.</p></div>
+        <div><i>03</i><h4>Estudo e intercâmbio</h4><p>Universidades, bolsas e programas na Espanha e na América Latina ficam ao seu alcance.</p></div>
+        <div><i>04</i><h4>Viagens e cultura</h4><p>Viaje com autonomia e entenda música, cinema e séries no idioma original, sem legenda.</p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+      <div>
+        <h3>Você entende, mas trava na hora de falar?</h3>
+        <p>Não importa de onde você parte. A aula é construída a partir do ponto em que você está.</p>
+      </div>
+      <div class="aud">
+        <div><h4>Iniciantes</h4><p>Comece do zero sem medo de errar, com base sólida e pronúncia correta.</p></div>
+        <div><h4>Intermediários</h4><p>Saia do “entendo, mas não falo” com muita conversação.</p></div>
+        <div><h4>Profissionais</h4><p>Espanhol para reuniões, e-mails e negociações da sua área.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IV · Letterboxed night scene -->
+<div class="night" aria-label="Cena: aula ao vivo à noite">
+  <div class="lb">
+    <svg viewBox="0 0 1434 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050408"/><stop offset=".7" stop-color="#14100f"/><stop offset="1" stop-color="#2a2016"/></linearGradient>
+        <radialGradient id="moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6df"/><stop offset=".25" stop-color="#e3cfa6"/><stop offset="1" stop-color="#e3cfa6" stop-opacity="0"/></radialGradient>
+        <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cfa6" stop-opacity=".95"/><stop offset="1" stop-color="#b8a073" stop-opacity=".7"/></linearGradient>
+      </defs>
+      <rect width="1434" height="600" fill="url(#sky)"/>
+      <g fill="#efe8dc" id="stars"></g>
+      <circle cx="1050" cy="170" r="190" fill="url(#moon)" opacity=".55"/>
+      <circle cx="1050" cy="170" r="46" fill="#f4e8cc"/>
+      <path fill="#0a0809" d="M0 600V430l60-8v-50h70v62l40 4v-90h80v90l50-6v-60h90v70l60-4v-120h70v120l60 6v-48h100v56l50-8v-96h84v100l60-6v-52h96v60l50-4v-84h70v90l60-6v-50h80v60l60-4v-70h90v76l70-6v-40h60v50l40 0V600z"/>
+      <g fill="url(#win)" id="wins"></g>
+      <rect y="560" width="1434" height="40" fill="#050405"/>
+    </svg>
+    <div class="meta"><span>Cena 01 · Aula ao vivo</span><span>Noite · online</span></div>
+    <div class="sub" id="sub" aria-live="off">¡Hola! ¿Cómo estás hoy?<small>Olá! Como você está hoje?</small></div>
+  </div>
+</div>
+
+<!-- V · Repairability & specs → method + specs -->
+<section id="formato">
+  <div class="wrap specs-g">
+    <div class="rv">
+      <span class="eyebrow">O método</span>
+      <h2>Aula sob medida,<br><em>não curso de prateleira.</em></h2>
+      <p class="lead">Mais de 10 anos ensinando em escolas, cursos de idiomas e com experiência internacional: cada aula se adapta ao seu nível, suas dificuldades e seu objetivo.</p>
+      <div class="steps">
+        <div><i>01</i><b>Diagnóstico gratuito</b><span>do seu nível e da sua meta.</span></div>
+        <div><i>02</i><b>Plano personalizado</b><span>no seu ritmo.</span></div>
+        <div><i>03</i><b>Prática de verdade</b><span>com correção gentil a cada aula.</span></div>
+      </div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Especificações</span>
+      <table style="margin-top:34px">
+        <tr><td>Formato</td><td><b>Individual e ao vivo</b><em>100% online, em horários combinados com você.</em></td></tr>
+        <tr><td>Duração</td><td><b>50 minutos por aula</b></td></tr>
+        <tr><td>Leve</td><td><b>1 aula por semana</b><em>4 aulas por mês. Ideal para manter contato com o idioma.</em></td></tr>
+        <tr><td>Regular <span class="tag">Mais escolhido</span></td><td><b>2 aulas por semana</b><em>8 aulas por mês. O ritmo ideal para evoluir de verdade em poucos meses.</em></td></tr>
+        <tr><td>Intensivo</td><td><b>3 aulas por semana</b><em>12 aulas por mês para quem tem prazo: viagem, mudança ou vaga de trabalho.</em></td></tr>
+      </table>
+      <p class="plan-n">Os valores são passados no WhatsApp, junto com o agendamento da aula experimental.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VI · Companion panel -->
+<section class="app">
+  <div class="wrap app-g">
+    <div class="rv">
+      <div class="phone"><div class="screen" id="scr">
+        <div class="top"><div class="av">ñ</div><div><b>Conecta Español</b><small>● online agora</small></div></div>
+        <div class="m l">¡Hola! ¿Cómo estás hoy?</div>
+        <div class="m r">¡Muy bien, gracias!</div>
+        <div class="m l">¡Perfecto! Vamos a practicar.</div>
+        <div class="m r">Viajar · Trabalho · Cultura · Intercâmbio</div>
+      </div></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Combine tudo no WhatsApp</span>
+      <h2>Do primeiro contato<br>à <em>primeira aula.</em></h2>
+      <p class="lead">Sem formulários longos nem cadastro. Você manda uma mensagem, a professora responde e vocês combinam o melhor horário.</p>
+      <ul class="feat">
+        <li>Mensagem já pronta com seu nome e seu nível.</li>
+        <li>Resposta direta da professora, sem atendimento automático.</li>
+        <li>Valores e horários combinados na própria conversa.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VII · Bookable showroom -->
+<section class="sr" id="reserva">
+  <div class="wrap sr-g">
+    <div class="rv">
+      <span class="eyebrow">Agenda</span>
+      <h2>Reserve o seu <em>horário.</em></h2>
+      <p class="lead">Escolha os dias e o período em que você prefere ter aula. A professora confirma a disponibilidade pelo WhatsApp.</p>
+    </div>
+    <div class="book rv">
+      <label>Dias de preferência</label>
+      <div class="chips" id="days">
+        <button class="chip" aria-pressed="false">Seg</button><button class="chip" aria-pressed="false">Ter</button><button class="chip" aria-pressed="false">Qua</button><button class="chip" aria-pressed="false">Qui</button><button class="chip" aria-pressed="false">Sex</button><button class="chip" aria-pressed="false">Sáb</button>
+      </div>
+      <label>Período</label>
+      <div class="chips" id="per">
+        <button class="chip" aria-pressed="false">Manhã</button><button class="chip" aria-pressed="false">Tarde</button><button class="chip" aria-pressed="false">Noite</button>
+      </div>
+      <div class="sel" id="sel">Escolha seus dias e período para montar o pedido.</div>
+      <a class="glass" href="#aula" id="goform">Continuar para a reserva →</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIII · Journal -->
+<section id="duvidas" style="padding-top:60px">
+  <div class="wrap">
+    <div class="jr-h rv"><span class="eyebrow">Diário</span><h2>Perguntas <em>frequentes.</em></h2></div>
+    <details><summary><i>01</i>Como funciona a aula experimental?</summary><p>É uma conversa online e individual, sem custo e sem compromisso, para entender seu nível e seu objetivo e mostrar como são as aulas.</p></details>
+    <details><summary><i>02</i>Preciso saber alguma coisa de espanhol?</summary><p>Não. Há aulas para quem começa do zero, para quem já entende e quer falar, e para quem precisa do idioma no trabalho.</p></details>
+    <details><summary><i>03</i>As aulas são online?</summary><p>Sim, 100% online e ao vivo, em horários combinados com você.</p></details>
+    <details><summary><i>04</i>Como agendo?</summary><p>Preencha o formulário abaixo: ele abre uma conversa no WhatsApp já com seus dados, e a professora responde para combinar o melhor horário.</p></details>
+  </div>
+</section>
+
+<!-- IX · Closing invitation -->
+<section class="close" id="aula">
+  <div class="wrap">
+    <span class="eyebrow">Convite</span>
+    <h2>Sua primeira aula<br>é <em>por nossa conta.</em></h2>
+    <p class="lead">Deixe seu nome e seu nível: abrimos uma conversa no WhatsApp para combinar o melhor horário. Sem compromisso, sem cartão.</p>
+    <form class="fm" id="f">
+      <label for="nome">Seu nome</label>
+      <input type="text" id="nome" placeholder="Como devemos chamar você?" required autocomplete="given-name">
+      <label>Seu nível hoje</label>
+      <div class="chips" id="lvl">
+        <button type="button" class="chip" aria-pressed="true">Iniciante</button><button type="button" class="chip" aria-pressed="false">Intermediário</button><button type="button" class="chip" aria-pressed="false">Avançado</button>
+      </div>
+      <div class="pref" id="pref"></div>
+      <button class="glass" type="submit">Quero minha aula gratuita →</button>
+      <p class="n">Ao enviar, você abre o WhatsApp com a mensagem pronta.</p>
     </form>
   </div>
 </section>
 
-<footer><div class="wrap"><span>© 2026 Conecta Español · Aulas particulares de espanhol</span><a href="#aula">Agendar aula grátis</a></div></footer>
+<footer>© 2026 Conecta Español · Aulas particulares de espanhol</footer>
 
-<a class="wa" href="https://wa.me/5561998119885?text=Ol%C3%A1!%20Quero%20agendar%20minha%20aula%20experimental%20de%20espanhol." target="_blank" rel="noopener">WhatsApp</a>
+<a class="wa" href="https://wa.me/5561998119885?text=Ol%C3%A1!%20Quero%20agendar%20minha%20aula%20experimental%20de%20espanhol." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.3 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zM8.6 7.5c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.100s.9 2.400 1 2.600c.1.2 1.800 2.800 4.400 3.900 2.200.9 2.600.7 3.100.7.5-.1 1.500-.6 1.700-1.200.2-.6.2-1.100.2-1.200-.1-.1-.2-.2-.5-.3l-1.600-.8c-.2-.1-.4-.1-.6.100l-.7.900c-.1.200-.3.200-.5.100-.3-.1-1-.4-1.900-1.200-.7-.6-1.200-1.400-1.300-1.600-.1-.2 0-.4.100-.5l.4-.4.2-.4c.1-.1 0-.3 0-.4l-.7-1.700c-.2-.5-.4-.4-.6-.4z"/></svg>
+</a>
 
 <script>
 (function(){
-  var level='Iniciante';
-  var btns=document.querySelectorAll('#lv button');
-  btns.forEach(function(b){
-    b.addEventListener('click',function(){
-      btns.forEach(function(x){x.classList.remove('on')});
-      b.classList.add('on');
-      level=b.textContent;
-    });
-  });
-  document.getElementById('f').addEventListener('submit',function(e){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // nav state
+  var nav=$('#nav');function sc(){nav.classList.toggle('s',scrollY>40)}sc();addEventListener('scroll',sc,{passive:true});
+
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  $$('.rv').forEach(function(el){io.observe(el)});
+
+  // manifesto word-by-word
+  var mf=$('#mf'),words=mf.dataset.t.split(' ');
+  mf.innerHTML=words.map(function(w,i){var g=/vive|voz|alta/i.test(w)?' g':'';return '<span class="'+g.trim()+'">'+w+'</span>'}).join(' ');
+  var ws=$$('span',mf);
+  function mfp(){var r=mf.getBoundingClientRect(),h=innerHeight,p=(h*.85-r.top)/(h*.55+r.height*.4);p=Math.max(0,Math.min(1,p));var n=Math.round(p*ws.length);ws.forEach(function(s,i){s.classList.toggle('on',i<n)})}
+  mfp();addEventListener('scroll',mfp,{passive:true});addEventListener('resize',mfp);
+
+  // tabs
+  var tabs=$$('[role=tab]');
+  function sel(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;var p=document.getElementById(b.getAttribute('aria-controls'));p.hidden=!on;p.classList.toggle('on',on)})}
+  tabs.forEach(function(b,i){b.addEventListener('click',function(){sel(b)});b.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(n){var t=tabs[(i+n+tabs.length)%tabs.length];t.focus();sel(t)}})});
+
+  // night scene: stars, windows, subtitles
+  var NS='http://www.w3.org/2000/svg',st=$('#stars'),seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  for(var i=0;i<90;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',rnd()*1434);c.setAttribute('cy',rnd()*330);c.setAttribute('r',.5+rnd()*1.3);c.setAttribute('class','star');c.style.animationDelay=(-rnd()*4)+'s';c.style.animationDuration=(2+rnd()*4)+'s';st.appendChild(c)}
+  var wn=$('#wins');for(var j=0;j<46;j++){if(rnd()<.45){var r=document.createElementNS(NS,'rect');r.setAttribute('x',30+rnd()*1380);r.setAttribute('y',410+rnd()*140);r.setAttribute('width',7);r.setAttribute('height',10);r.setAttribute('opacity',.35+rnd()*.6);wn.appendChild(r)}}
+  var lines=[['¡Hola! ¿Cómo estás hoy?','Olá! Como você está hoje?'],['Hoy vamos a conversar.','Hoje vamos conversar.'],['No tengas miedo de equivocarte.','Não tenha medo de errar.'],['¡Muy bien! Lo estás logrando.','Muito bem! Você está conseguindo.']];
+  var sub=$('#sub'),k=0;if(!reduce)setInterval(function(){sub.style.opacity=0;setTimeout(function(){k=(k+1)%lines.length;sub.innerHTML=lines[k][0]+'<small>'+lines[k][1]+'</small>';sub.style.opacity=1},800)},4600);
+
+  // chat start on view
+  var scr=$('#scr');new IntersectionObserver(function(e,o){if(e[0].isIntersecting){scr.classList.add('go');o.disconnect()}},{threshold:.4}).observe(scr);
+
+  // chips
+  function multi(id){var box=$(id);box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');upd()})}
+  function single(id){var box=$(id);box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;$$('.chip',box).forEach(function(x){x.setAttribute('aria-pressed',x===b)});upd()})}
+  multi('#days');multi('#per');single('#lvl');
+  function picked(id){return $$('.chip[aria-pressed=true]',$(id)).map(function(b){return b.textContent})}
+  function when(){var d=picked('#days'),p=picked('#per');if(!d.length&&!p.length)return '';var s=(d.length?d.join(', '):'qualquer dia')+(p.length?' · '+p.join(' / ').toLowerCase():'');return s}
+  function upd(){var w=when();$('#sel').innerHTML=w?'Preferência: <em>'+w+'</em>.':'Escolha seus dias e período para montar o pedido.';$('#pref').innerHTML=w?'Horário de preferência: <em>'+w+'</em>':''}
+  upd();
+
+  // form → WhatsApp
+  $('#f').addEventListener('submit',function(e){
     e.preventDefault();
-    var nome=document.getElementById('nome').value.trim();
-    var msg='Olá! Meu nome é '+nome+'. Meu nível de espanhol hoje é '+level.toLowerCase()+'. Quero agendar minha aula experimental gratuita.';
+    var nome=$('#nome').value.trim(),lv=(picked('#lvl')[0]||'Iniciante').toLowerCase(),w=when();
+    var msg='Olá! Meu nome é '+nome+'. Meu nível de espanhol hoje é '+lv+'.'+(w?' Prefiro aulas em: '+w+'.':'')+' Quero agendar minha aula experimental gratuita.';
     window.open('https://wa.me/5561998119885?text='+encodeURIComponent(msg),'_blank','noopener');
   });
+  $('#goform').addEventListener('click',function(){setTimeout(function(){$('#nome').focus({preventScroll:true})},700)});
 })();
 </script>
 </body>
